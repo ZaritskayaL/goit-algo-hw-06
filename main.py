@@ -56,9 +56,9 @@ class Record:
         if not phone_obj:
             raise ValueError("Old phone number not found.")
         
-        self.remove_phone(old_phone)
-        self.add_phone(new_phone)
+        Phone(new_phone) 
         
+        phone_obj.value = new_phone
         return True
     
     
@@ -101,7 +101,7 @@ book.add_record(john_record)
    
 jane_record = Record("Jane")
 jane_record.add_phone("9876543210")
-book.add_phone(jane_record)
+book.add_record(jane_record)
 
 print(book)
   
